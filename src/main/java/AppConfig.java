@@ -11,4 +11,9 @@ public class AppConfig {
         helloWorld.setMessage("Hello World!");
         return helloWorld;
     }
+    @Bean(name = "cat")
+    @Scope("prototype")  // Указываем scope prototype для создания нового экземпляра при каждом запросе
+    public Cat getCat() {
+        return new Cat("Whiskers");
+    }
 }
